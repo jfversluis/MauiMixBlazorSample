@@ -2,13 +2,39 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MauiMixBlazorSample"
+            xmlns:pages="clr-namespace:MauiMixBlazorSample.Pages"
              x:Class="MauiMixBlazorSample.MainPage"
-             BackgroundColor="{DynamicResource PageBackgroundColor}">
-
-    <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             NavigationPage.HasNavigationBar="False">
+    
+    <BlazorWebView HostPage="wwwroot/index.html">
         <BlazorWebView.RootComponents>
             <RootComponent Selector="#app" ComponentType="{x:Type local:Main}" />
         </BlazorWebView.RootComponents>
     </BlazorWebView>
+
+    <!-- Blazor/MAUI Tabs -->
+    <!--<ContentPage
+        Title="Index">
+    <BlazorWebView  HostPage="wwwroot/index.html">
+        <BlazorWebView.RootComponents>
+            <RootComponent Selector="#app" ComponentType="{x:Type pages:Index}" />
+        </BlazorWebView.RootComponents>
+    </BlazorWebView>
+    </ContentPage>
+
+    <ContentPage
+        Title="Counter">
+        <BlazorWebView  HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent Selector="#app" ComponentType="{x:Type pages:Counter}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </ContentPage>
+
+    <ContentPage
+        Title="MAUI">
+        <Label Text="This is a MAUI Page" TextColor="Black" FontSize="28"/>
+    </ContentPage>-->
 
 </ContentPage>

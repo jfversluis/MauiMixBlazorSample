@@ -50,7 +50,24 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Maui" Version="3.0.0" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+        <PackageReference Include="ZXing.Net.Maui.Controls" Version="0.3.0-preview.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="MauiPages\MauiPopupPage.xaml.cs">
+        <DependentUpon>MauiPopupPage.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiXaml Update="MauiPages\MauiPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="MauiPages\MauiPopupPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
     </ItemGroup>
 
 </Project>

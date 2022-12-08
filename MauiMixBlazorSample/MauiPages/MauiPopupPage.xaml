@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             xmlns:zxingoptions="clr-namespace:ZXing.Net.Maui;assembly=ZXing.Net.MAUI"
+             x:Class="MauiMixBlazorSample.MauiPages.MauiPopupPage">
+    <zxing:CameraBarcodeReaderView 
+        x:Name="scanner" 
+        IsDetecting="True"
+        BarcodesDetected="scanner_BarcodesDetected">
+        <zxing:CameraBarcodeReaderView.Options>
+            <zxingoptions:BarcodeReaderOptions AutoRotate="True"/>
+        </zxing:CameraBarcodeReaderView.Options>
+    </zxing:CameraBarcodeReaderView>
+</mct:Popup>

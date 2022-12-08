@@ -1,16 +1,33 @@
-﻿@page "/counter"
+﻿@using CommunityToolkit.Maui.Views;
+@using MauiMixBlazorSample.MauiPages;
+@page "/counter"
 
 <h1>Counter</h1>
 
 <p role="status">Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary" @onclick="OpenPage">Open MAUI Page</button>
+<button class="btn btn-primary" @onclick="OpenPopup">Open MAUI Popup</button>
+
+<input @bind="resultValue"/>
 
 @code {
+    private string resultValue;
     private int currentCount = 0;
 
-    private void IncrementCount()
+    private void OpenPage()
     {
         currentCount++;
+
+        App.Current.MainPage.Navigation.PushModalAsync(new MauiPages.MauiPage());
+    }
+
+    private async void OpenPopup()
+    {
+        currentCount++;
+
+        var result = await App.Current.MainPage.ShowPopupAsync(new MauiPopupPage());
+        resultValue = result.ToString();
+        StateHasChanged();
     }
 }
